@@ -105,7 +105,7 @@ function materialwp_scripts() {
 	wp_enqueue_style( 'mwp-ripples-styles', get_template_directory_uri() . '/bower_components/bootstrap-material-design/dist/css/ripples.min.css', array(), '', 'all' );
 
 	wp_enqueue_style( 'materialwp-style', get_stylesheet_uri() );
-
+	
 	wp_enqueue_script( 'mwp-bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), '3.3.6', true );
 
 	wp_enqueue_script( 'mwp-ripples-js', get_template_directory_uri() . '/bower_components/bootstrap-material-design/dist/js/ripples.min.js', array('jquery'), '', true );
@@ -117,6 +117,10 @@ function materialwp_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	 /**
+	 * 自己添加的东西
+ 	 */
+	  wp_enqueue_style( 'my-style', get_template_directory_uri() . '/css/my-style.css', array(), '1.0.0', 'all' );	
 }
 add_action( 'wp_enqueue_scripts', 'materialwp_scripts' );
 
